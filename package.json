@@ -14,7 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "jquery": "1.12.4",
     "mobx": "^5.5.1",
     "mobx-react": "^5.3.4",
     "npm": "^6.4.1",
