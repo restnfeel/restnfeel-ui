@@ -1,9 +1,9 @@
 {
-  "name": "@material-ui/core",
+  "name": "restnfeel-ui",
   "private": false,
-  "author": "Material-UI Team",
+  "author": "SEO JEONG HWAN",
   "version": "3.6.0",
-  "description": "React components that implement Google's Material Design.",
+  "description": "React components UI based Google's Material Design.",
   "keywords": [
     "react",
     "react-component",
@@ -12,13 +12,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mui-org/material-ui.git"
+    "url": "https://github.com/restnfeel/restnfeel-ui.git"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mui-org/material-ui/issues"
-  },
-  "homepage": "https://material-ui.com/",
+  "homepage": "https://www.restnfeel.com/",
   "scripts": {
     "start": "node ./node_modules/rollup/bin/rollup --config rollup.config.dev.js -w",
     "prebuild": "rimraf build",
