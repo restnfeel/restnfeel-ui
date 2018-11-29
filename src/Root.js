@@ -1,16 +1,22 @@
-import React, { Component, Fragment } from "react";
-import Index from "./index";
+import React, { Component } from "react";
+import { Button } from "./index";
 
-/**
- * @author : restnfeel
- * .
- */
 class Root extends Component {
+  handleBtnClick = () => {
+    console.log("Btn click >>");
+  };
+
   render() {
     return (
-      <Fragment>
-        <Index />
-      </Fragment>
+      <div>
+        <Button
+          onClick={this.handleBtnClick}
+          variant="outlined"
+          color="primary"
+        >
+          Check
+        </Button>
+      </div>
     );
   }
 }
