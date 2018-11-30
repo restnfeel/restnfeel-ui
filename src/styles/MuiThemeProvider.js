@@ -1,20 +1,21 @@
 /* eslint-disable no-underscore-dangle */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import warning from 'warning';
-import createBroadcast from 'brcast';
-import { exactProp, ponyfillGlobal } from '@material-ui/utils';
-import themeListener, { CHANNEL } from './themeListener';
+import React from "react";
+import PropTypes from "prop-types";
+import warning from "warning";
+import createBroadcast from "brcast";
+import { exactProp, ponyfillGlobal } from "@material-ui/utils";
+import themeListener, { CHANNEL } from "./themeListener";
 
 /**
  * This component takes a `theme` property.
  * It makes the `theme` available down the React tree thanks to React context.
  * This component should preferably be used at **the root of your component tree**.
  */
-export class MuiThemeProviderOld extends React.Component {
-  broadcast = createBroadcast();
 
+const broadcast = createBroadcast();
+
+export class MuiThemeProviderOld extends React.Component {
   // We are not using the React state in order to avoid unnecessary rerender.
   constructor(props, context) {
     super();
@@ -42,7 +43,7 @@ export class MuiThemeProviderOld extends React.Component {
 
     return {
       [CHANNEL]: this.broadcast,
-      muiThemeProviderOptions,
+      muiThemeProviderOptions
     };
   }
 
@@ -71,17 +72,17 @@ export class MuiThemeProviderOld extends React.Component {
   // Simple merge between the outer theme and the local theme
   mergeOuterLocalTheme(localTheme) {
     // To support composition of theme.
-    if (typeof localTheme === 'function') {
+    if (typeof localTheme === "function") {
       warning(
         this.outerTheme,
         [
-          'Material-UI: you are providing a theme function property ' +
-            'to the MuiThemeProvider component:',
-          '<MuiThemeProvider theme={outerTheme => outerTheme} />',
-          'However, no outer theme is present.',
-          'Make sure a theme is already injected higher in the React tree ' +
-            'or provide a theme object.',
-        ].join('\n'),
+          "Material-UI: you are providing a theme function property " +
+            "to the MuiThemeProvider component:",
+          "<MuiThemeProvider theme={outerTheme => outerTheme} />",
+          "However, no outer theme is present.",
+          "Make sure a theme is already injected higher in the React tree " +
+            "or provide a theme object."
+        ].join("\n")
       );
       return localTheme(this.outerTheme);
     }
@@ -136,19 +137,19 @@ MuiThemeProviderOld.propTypes = {
   /**
    * A theme object.
    */
-  theme: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
+  theme: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired
 };
 
 MuiThemeProviderOld.propTypes = exactProp(MuiThemeProviderOld.propTypes);
 
 MuiThemeProviderOld.childContextTypes = {
   ...themeListener.contextTypes,
-  muiThemeProviderOptions: PropTypes.object,
+  muiThemeProviderOptions: PropTypes.object
 };
 
 MuiThemeProviderOld.contextTypes = {
   ...themeListener.contextTypes,
-  muiThemeProviderOptions: PropTypes.object,
+  muiThemeProviderOptions: PropTypes.object
 };
 
 /* istanbul ignore if */

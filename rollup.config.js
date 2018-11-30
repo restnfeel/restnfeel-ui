@@ -17,7 +17,7 @@ export default {
   output: {
     file: `./dist/${distName}.min.js`,
     format: "cjs",
-    name: `${distName.replace(/-/gi, "")}`,
+    //name: `${distName.replace(/-/gi, "")}`,
     globals: {}
   },
   external: [],
