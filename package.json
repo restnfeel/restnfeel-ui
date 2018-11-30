@@ -1,6 +1,6 @@
 {
   "name": "restnfeel-ui",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "",
   "main": "./build/restnfeel-ui.min.js",
   "scripts": {
@@ -15,6 +15,10 @@
     "create-rest-module",
     "testrollup"
   ],
+  "homepage": "https://www.restnfeel.com",
+  "repository": {
+    "url": "https://github.com/restnfeel/restnfeel-ui"
+  },
   "author": "Developer [RestNFeel-MacBook]",
   "license": "MIT",
   "dependencies": {
