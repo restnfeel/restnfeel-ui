@@ -1,12 +1,38 @@
 import React, { Component } from "react";
-import { Button } from "./index";
+import { Button, MultiSelect } from "./index";
 
 class Root extends Component {
-  handleBtnClick = () => {
-    console.log("Btn click >>");
+  state = {
+    options: [],
+    selected: []
   };
 
+  handleBtnClick = () => {
+    console.log("Btn click >>");
+    this.setState({
+      options: [
+        {
+          label: "React",
+          value: "react"
+        },
+        {
+          label: "Go",
+          value: "go"
+        },
+        {
+          label: "TypeScript",
+          value: "typescript"
+        }
+      ]
+    });
+  };
+
+  handleSelectedChanged = selected => {
+    this.setState({ selected });
+  };
   render() {
+    const { options, selected } = this.state;
+
     return (
       <div>
         <Button
@@ -16,6 +42,12 @@ class Root extends Component {
         >
           Check
         </Button>
+
+        <MultiSelect
+          options={options}
+          onSelectedChanged={this.handleSelectedChanged}
+          selected={selected}
+        />
       </div>
     );
   }
