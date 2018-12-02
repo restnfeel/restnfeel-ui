@@ -1,13 +1,13 @@
 {
   "name": "restnfeel-ui",
-  "version": "0.1.13",
+  "version": "0.1.16",
   "description": "",
   "main": "./build/restnfeel-ui.min.js",
   "scripts": {
     "prestart": "rimraf ./dist",
     "start": "parcel ./index.html",
     "prebuild": "rimraf ./build",
-    "build": "parcel build production.js --out-file restnfeel-ui.min.js -d build --public-url ./",
+    "build": "parcel build ./src/index.js --out-file restnfeel-ui.min.js -d build --public-url ./",
     "doc": "./node_modules/.bin/esdoc",
     "test": "jest --watchAll"
   },
@@ -61,6 +61,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-plugin-flow-react-proptypes": "^24.1.2",
+    "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-jest": "^23.2.0",

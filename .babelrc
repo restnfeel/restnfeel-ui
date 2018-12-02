@@ -18,5 +18,19 @@
     "@babel/plugin-proposal-object-rest-spread",
     "flow-react-proptypes"
   ],
+  "env": {
+    "test": {
+      "sourceMaps": "both",
+      "plugins": [
+        [
+          "babel-plugin-module-resolver",
+          {
+            "root": ["./"],
+            "alias": { "restnfeel-ui": "./packages/material-ui/src" }
+          }
+        ]
+      ]
+    }
+  },
   "retainLines": true
 }
